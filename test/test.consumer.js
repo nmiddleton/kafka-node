@@ -35,7 +35,7 @@ before(function (done) {
     });
 });
 
-describe('Consumer', function () {
+describe.skip('Consumer', function () {
     
     describe('events', function () {
         it ('should emit message when get new message', function (done) {

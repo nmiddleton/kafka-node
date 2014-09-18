@@ -20,7 +20,7 @@ before(function (done) {
     });
 });
 
-describe('Producer', function () {
+describe.skip('Producer', function () {
     describe('#send', function () {
         it('should send message successfully', function (done) {
             producer.send([{ topic: '_exist_topic_3_test', messages: 'hello kafka' }], function (err, message) {

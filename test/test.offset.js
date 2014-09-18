@@ -11,7 +11,7 @@ before(function (done) {
     client = new Client();
     producer = new Producer(client);
     producer.on('ready', function () {
-        producer.createTopics(['_exist_topic_3_test'], false, function (err, created) {
+        producer.createTopics(['_exist_topic_test_offset'], false, function (err, created) {
            done(err);
         });
     });
@@ -22,7 +22,7 @@ before(function (done) {
 describe('Offset', function () {
     describe('#fetch', function () {
         it('should return offset of the topics', function (done) {
-            var topic = '_exist_topic_3_test',
+            var topic = '_exist_topic_test_offset',
                 topics = [ { topic: topic } ];
             offset.fetch(topics, function (err, data) {
                 var offsets = data[topic][0];
@@ -33,7 +33,7 @@ describe('Offset', function () {
         });
 
         it('should return earliest offset of the topics', function (done) {
-            var topic = '_exist_topic_3_test',
+            var topic = '_exist_topic_test_offset',
                 topics = [ { topic: topic, time: -2 } ];
             offset.fetch(topics, function (err, data) {
                 var offsets = data[topic][0];
@@ -44,7 +44,7 @@ describe('Offset', function () {
         });
 
         it('should return latest offset of the topics', function (done) {
-            var topic = '_exist_topic_3_test',
+            var topic = '_exist_topic_test_offset',
                 topics = [ { topic: topic, time: -1 } ];
             offset.fetch(topics, function (err, data) {
                 var offsets = data[topic][0];
@@ -57,7 +57,7 @@ describe('Offset', function () {
 
     describe('#commit', function () {
         it('should commit successfully', function (done) {
-            var topic = '_exist_topic_3_test',
+            var topic = '_exist_topic_test_offset',
                 topics = [ { topic: topic, offset: 10 } ];
             offset.commit('_groupId_commit_test', topics, function (err, data) {
                 data.should.be.ok;
@@ -69,7 +69,7 @@ describe('Offset', function () {
 
     describe('#fetchCommits', function () {
         it('should get last commited offset of the consumer group', function (done) {
-            var topic = '_exist_topic_3_test',
+            var topic = '_exist_topic_test_offset',
                 topics = [ { topic: topic, offset: 10 } ];
             offset.fetchCommits('_groupId_commit_1_test', topics, function (err, data) {
                 data.should.be.ok;

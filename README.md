@@ -15,7 +15,7 @@ Follow the [instructions](https://cwiki.apache.org/KAFKA/kafka-08-quick-start.ht
 # API
 ## Client
 ### Client(connectionString, clientId, [zkOptions])
-* `connectionString`: Zookeeper connection string, default `localhost:2181/kafka0.8`
+* `connectionString`: Zookeeper connection string, default `kafka01:2181/`
 * `clientId`: This is a user supplied identifier for the client application, default `kafka-node-client`
 * `zkOptions`: **Object**, Zookeeper options, see [node-zookeeper-client](https://github.com/alexguan/node-zookeeper-client#client-createclientconnectionstring-options)
 
