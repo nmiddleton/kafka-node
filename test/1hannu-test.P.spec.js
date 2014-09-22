@@ -80,7 +80,7 @@ before(function (done) {
     });
 });
 
-describe('hannu-producer-raw', function () {
+describe('hannu-producer-basic', function () {
     describe('#send', function () {
         it('should send RAW message into hannu successfully', function (done) {
             producer.send([
