@@ -16,7 +16,7 @@ before(function () {
     zk = new Zookeeper('kafka01:2181/');
 });
 
-describe('Zookeeper', function () {
+describe.skip('Zookeeper', function () {
     describe('when init success', function () {
         it('should emit init event', function (done) {
             var zk = new Zookeeper('kafka01:2181/');

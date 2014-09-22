@@ -64,7 +64,7 @@ beforeEach(function (done) {
 
 //=================================================
 
-describe('hannu-normalised', function () {
+describe('hannu-consumer-raw', function () {
     describe('events', function () {
         it('should consume JSON message when get new message on hannu-raw', function (done) {
             var topics = [
@@ -79,7 +79,7 @@ describe('hannu-normalised', function () {
             });
             consumer.on('message', function (message) {
                 message.topic.should.equal('hannu-raw');
-               console.log(">>"+message.value+"<<");
+                //console.log("hannu-raw>>"+message.value+"<<");
                 var parsed_msg = JSON.parse(message.value);
                 expect(parsed_msg).to.have.property('end_point', hannu_raw_msg_1.end_point);
                 expect(parsed_msg).to.have.property('summary', hannu_raw_msg_1.summary);

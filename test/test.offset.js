@@ -19,7 +19,7 @@ before(function (done) {
     offset = new Offset(client);
 });
 
-describe('Offset', function () {
+describe.skip('Offset', function () {
     describe('#fetch', function () {
         it('should return offset of the topics', function (done) {
             var topic = '_exist_topic_test_offset',
